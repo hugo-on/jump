@@ -2,7 +2,7 @@
 
 # set up variables
 PORT=$PORT
-UUID=""
+UUID=$UUID
 if [ "$UUID" = "" ]; then
   UUID=$(cat /proc/sys/kernel/random/uuid)
 fi
