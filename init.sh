@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # set up variables
-PORT=
+PORT=$PORT
 UUID=""
 if [ "$UUID" = "" ]; then
   UUID=$(cat /proc/sys/kernel/random/uuid)
@@ -73,5 +73,4 @@ echo "PATH: $WSPATH"
 echo "PORT: $PORT"
 
 # run caddy
-caddy run --config /etc/caddy/Caddyfile --adapter caddyfile > /dev/null 2&>1
-[ $? -eq 0 ] && echo caddy ok.
+caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
