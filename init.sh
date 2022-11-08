@@ -6,7 +6,7 @@ UUID=$UUID
 if [ "$UUID" = "" ]; then
   UUID=$(cat /proc/sys/kernel/random/uuid)
 fi
-WSPATH="/less"
+WSPATH="/testdown"
 
 mkdir -p /etc/caddy /usr/share/caddy
 
@@ -29,12 +29,12 @@ cat > /xp.json << EOF
     [
         {
             "listen": "/etc/caddy/less",
-            "protocol": "vless",
+            "protocol": "vmess",
             "settings": {
 				"clients": [
 					{"id": "$UUID"}
 				],
-				"decryption": "none"
+				"disableInsecureEncryption": true
 			},
             "streamSettings": {"network": "ws","wsSettings": {"path": "$WSPATH"}}
         }
