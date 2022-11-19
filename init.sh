@@ -16,7 +16,9 @@ cat > /etc/caddy/Caddyfile << EOF
 	#root * /usr/share/caddy
 	file_server
 
-	proxy / https://drive.cubercsl.site
+	reverse_proxy / {
+		to https://drive.cubercsl.site
+	}
 	
 	reverse_proxy $WSPATH {
 		to unix//etc/caddy/less
