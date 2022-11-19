@@ -6,7 +6,7 @@ UUID=$UUID
 if [ "$UUID" = "" ]; then
   UUID=$(cat /proc/sys/kernel/random/uuid)
 fi
-WSPATH="$(cat /proc/sys/kernel/random/uuid)"
+WSPATH="/$(cat /proc/sys/kernel/random/uuid)"
 
 mkdir -p /etc/caddy /usr/share/caddy
 
