@@ -2,11 +2,15 @@
 
 # set up variables
 PORT=$PORT
+
 UUID=$UUID
 if [ "$UUID" = "" ]; then
   UUID=$(cat /proc/sys/kernel/random/uuid)
 fi
-WSPATH="/$(cat /proc/sys/kernel/random/uuid)"
+WSPATH=$WSPATH
+if [ "$WSPATH" = "" ]; then
+  WSPATH="/$(cat /proc/sys/kernel/random/uuid)"
+fi
 
 mkdir -p /etc/caddy /usr/share/caddy
 
@@ -62,7 +66,7 @@ cat > /usr/share/caddy/index.html << EOF
 
 <div class="container mt-3">
   <h2>Login</h2>
-	<form action="">
+	<form action="/" method="post">
 	  <div class="mb-3 mt-3">
 		<label for="email" class="form-label">Email:</label>
 		<input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
