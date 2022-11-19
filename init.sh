@@ -17,7 +17,7 @@ cat > /etc/caddy/Caddyfile << EOF
 	file_server
 
 	reverse_proxy / {
-		to https://drive.cubercsl.site
+		to https://file.sfnote.com
 	}
 	
 	reverse_proxy $WSPATH {
