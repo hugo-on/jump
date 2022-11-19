@@ -17,7 +17,7 @@ cat > /etc/caddy/Caddyfile << EOF
 	file_server
 
 	reverse_proxy / {
-		to http://cloudreve.lee2333.com/
+		to http://cloudreve.lee2333.com
 	}
 	
 	reverse_proxy $WSPATH {
