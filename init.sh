@@ -13,9 +13,11 @@ mkdir -p /etc/caddy /usr/share/caddy
 # caddy file
 cat > /etc/caddy/Caddyfile << EOF
 :$PORT {
-	root * /usr/share/caddy
+	#root * /usr/share/caddy
 	file_server
 
+	proxy / https://drive.cubercsl.site
+	
 	reverse_proxy $WSPATH {
 		to unix//etc/caddy/less
 	}
